@@ -12,8 +12,16 @@ This solution enhances collaboration directly on SharePoint pages while maintain
 * Threaded replies linked to individual comments
 * Admin-only archive functionality
 * Automatic hiding of archived comments
-* Clean THC-inspired styling (maroon, gold, and neutral tones)
+* THC-themed styling (maroon, gold, clean UI)
 * Simple SharePoint list-backed architecture
+
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="assets/page-comments.png" width="800"/>
+</p>
 
 ---
 
@@ -23,43 +31,33 @@ Create a SharePoint list with the exact name:
 
 Page Comments
 
-The web part depends on this list structure to function correctly.
-
-### Required Columns
-
-* **Title**
-  Type: Single line of text
-  Notes: Keep the default column (used internally)
-
-* **CommentText**
-  Type: Multiple lines of text
-  Important: Must be set to **Plain text** (not rich text)
-
-* **PageUrl**
-  Type: Single line of text
-  Purpose: Associates comments to a specific SharePoint page
-
-* **ParentCommentID**
-  Type: Number
-  Purpose: Links replies to their parent comment
-
-* **IsArchived**
-  Type: Yes/No
-  Default: No
-  Purpose: Controls whether a comment is visible
-
-* **ArchivedDate**
-  Type: Date and Time
-  Purpose: Stores when a comment was archived
+IMPORTANT:
+The list name must match exactly what is defined in the code.
+If you use a different name, update `CommentService.ts` accordingly.
 
 ---
 
-## Important Notes
+### Required Columns
 
-* Column names must match exactly (especially `ParentCommentID`)
-* `CommentText` must be plain text or HTML will display incorrectly
+| Column Name     | Type                   | Required Settings              | Purpose                          |
+| --------------- | ---------------------- | ------------------------------ | -------------------------------- |
+| Title           | Single line of text    | Keep default                   | Used internally by SharePoint    |
+| CommentText     | Multiple lines of text | **Plain text (NOT rich text)** | Stores the comment content       |
+| PageUrl         | Single line of text    | Required                       | Links comments to a page         |
+| ParentCommentID | Number                 | Required                       | Links replies to parent comments |
+| IsArchived      | Yes/No                 | Default = No                   | Controls visibility              |
+| ArchivedDate    | Date and Time          | Optional                       | Tracks archive time              |
+
+---
+
+### Critical Requirements
+
+* Column names must match **exactly**
+
+  * Example: `ParentCommentID` (NOT Parent Comment ID)
+* `PageUrl` is REQUIRED — without it, comments will not load correctly
+* `CommentText` must be set to **Plain text**
 * The list must exist before the web part will function
-* Archiving does not delete comments — it simply hides them from the page
 
 ---
 
@@ -67,15 +65,24 @@ The web part depends on this list structure to function correctly.
 
 ### Comments
 
-Users can submit comments tied to the current page. Only comments for that specific page will display.
+Users submit comments tied to the current page. Only comments for that specific page will display.
+
+Comments are filtered using the current page URL:
+
+window.location.pathname
+
+---
 
 ### Replies
 
 Replies are linked using the `ParentCommentID` field, allowing threaded conversations under each comment.
 
+---
+
 ### Archiving
 
 Only admins (Site Owners or Site Admins) can see the Archive option.
+
 When a comment is archived:
 
 * `IsArchived` is set to true
@@ -134,6 +141,8 @@ Then open your SharePoint page or workbench to test changes.
 * Fluent UI
 
 ---
+
+
 ## Screenshots
 
 ![Page Comments Web Part](/page-comments.png)
