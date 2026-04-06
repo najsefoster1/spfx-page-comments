@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sp-fx-page-comments-client-side-solution",
+    "id": "75899b7b-3cc2-4094-b900-1c0330b19bfc",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "SPFxPageComments description"
+      },
+      "longDescription": {
+        "default": "SPFxPageComments description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "sp-fx-page-comments Feature",
+        "description": "The feature that activates elements of the sp-fx-page-comments solution.",
+        "id": "be3edf2e-5efd-4e8a-a7fc-8553ae2cfaba",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/sp-fx-page-comments.sppkg"
+  }
+}

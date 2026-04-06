@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.22.1",
+    "sdksVersions": {},
+    "version": "1.22.2",
+    "libraryName": "sp-fx-page-comments",
+    "libraryId": "75899b7b-3cc2-4094-b900-1c0330b19bfc",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "SPFxPageComments",
+    "solutionShortDescription": "SPFxPageComments description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

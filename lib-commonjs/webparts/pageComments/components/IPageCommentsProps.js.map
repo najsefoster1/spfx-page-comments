@@ -1,0 +1,1 @@
+{"version":3,"file":"IPageCommentsProps.js","sourceRoot":"","sources":["../../../../src/webparts/pageComments/components/IPageCommentsProps.ts"],"names":[],"mappings":"","sourcesContent":["export interface IPageCommentsProps {\n  description: string;\n  isDarkTheme: boolean;\n  environmentMessage: string;\n  hasTeamsContext: boolean;\n  userDisplayName: string;\n}\n"]}
