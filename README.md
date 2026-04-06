@@ -134,7 +134,14 @@ Then open your SharePoint page or workbench to test changes.
 * Fluent UI
 
 ---
+## Screenshots
 
+![Page Comments Web Part](/page-comments.png)
+
+
+
+
+---
 ## Future Enhancements
 
 * Pin important comments
